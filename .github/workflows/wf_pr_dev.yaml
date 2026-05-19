@@ -1,0 +1,24 @@
+name: wf_pr_dev
+on:
+  pull_request:
+    branches:
+      - develop
+      - wf/pr_validation_dev
+jobs:
+  pr_dev_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Welcome Step
+        run: echo "Welcome to the PR Validation Workflow for Develop Branch!"
+      - name: Job 1 second step
+        run: echo "This is the second step of the PR Validation Workflow for Develop Branch!"
+
+  second_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v6
+      - name: Git and Node Branches
+        run: | 
+          git @version
+          node --version

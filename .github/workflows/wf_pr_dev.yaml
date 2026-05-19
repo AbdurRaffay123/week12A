@@ -17,8 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Clone repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
       - name: Git and Node Branches
-        run: | 
-          git @version
+        run: |
+          git --version
           node --version
